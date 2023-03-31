@@ -1,9 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://vp4wxpixuu0o"]
+[gd_scene load_steps=4 format=3 uid="uid://vp4wxpixuu0o"]
 
 [ext_resource type="Script" path="res://interface/SettingsMenu/SettingsControls.gd" id="1_1qbwu"]
-[ext_resource type="Script" path="res://interface/SettingsMenu/FullscreenToggle.gd" id="2_1dgyl"]
-[ext_resource type="Script" path="res://interface/SettingsMenu/SfxToggle.gd" id="3_o8weu"]
-[ext_resource type="Script" path="res://interface/SettingsMenu/MusicToggle.gd" id="4_wsi1j"]
+[ext_resource type="Script" path="res://interface/SettingsMenu/GlobalBoolean.gd" id="3_wwpfs"]
 [ext_resource type="Script" path="res://interface/SettingsMenu/BackButton.gd" id="5_lcdcj"]
 
 [node name="Settings" type="Control"]
@@ -71,17 +69,20 @@ script = ExtResource("1_1qbwu")
 [node name="FullscreenToggle" type="CheckButton" parent="SettingsControls"]
 layout_mode = 2
 text = "Fullscreen"
-script = ExtResource("2_1dgyl")
+script = ExtResource("3_wwpfs")
+setting_name = "fullscreen"
 
 [node name="SfxToggle" type="CheckButton" parent="SettingsControls"]
 layout_mode = 2
 text = "Sound Effects"
-script = ExtResource("3_o8weu")
+script = ExtResource("3_wwpfs")
+setting_name = "play_sfx"
 
 [node name="MusicToggle" type="CheckButton" parent="SettingsControls"]
 layout_mode = 2
 text = "Music"
-script = ExtResource("4_wsi1j")
+script = ExtResource("3_wwpfs")
+setting_name = "play_music"
 
 [node name="BackButton" type="Button" parent="SettingsControls"]
 layout_mode = 2
