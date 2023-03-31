@@ -3,6 +3,7 @@ extends VFlowContainer
 func _ready():
     focus()
 
+    # Don't show a quit button on mobile.
     if !OS.has_feature("pc"):
         $Quit.hide()
 
