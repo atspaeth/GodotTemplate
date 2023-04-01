@@ -25,47 +25,14 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -65.5
-offset_top = 93.0
-offset_right = 65.5
-offset_bottom = 135.0
+offset_left = -83.0
+offset_top = 177.0
+offset_right = 83.0
+offset_bottom = 219.0
 grow_horizontal = 2
 theme_type_variation = &"HeaderLarge"
-text = "YOUR GAME"
+text = "Game Template"
 horizontal_alignment = 1
-
-[node name="Credit" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -59.5
-offset_top = 156.0
-offset_right = 59.5
-offset_bottom = 182.0
-grow_horizontal = 2
-text = "A game by YOU"
-
-[node name="Controls" type="Label" parent="."]
-layout_mode = 0
-offset_left = 843.0
-offset_top = 573.0
-offset_right = 1251.0
-offset_bottom = 677.0
-text = "CONTROLS
-Move: WASD | Accept: J | Cancel: K | Pause: P
-Move: Arrow Keys | Accept: Z | Cancel: Z | Pause: Esc
-Gamepads work too!"
-horizontal_alignment = 2
-
-[node name="Instructions" type="Label" parent="."]
-layout_mode = 0
-offset_left = 54.0
-offset_top = 570.0
-offset_right = 365.0
-offset_bottom = 674.0
-text = "INSTRUCTIONS
-Collect all the things!"
 
 [node name="MenuOptions" type="VFlowContainer" parent="." node_paths=PackedStringArray("shortcut_context")]
 layout_mode = 1

@@ -6,34 +6,14 @@
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_kxwwx")
 
-[node name="Stack" type="VFlowContainer" parent="."]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -172.0
-offset_top = 114.0
-offset_right = 175.0
-offset_bottom = 320.0
-grow_horizontal = 2
-size_flags_horizontal = 4
-metadata/_edit_group_ = true
-
-[node name="Title" type="Label" parent="Stack"]
-layout_mode = 2
+[node name="Title" type="Label" parent="."]
+offset_left = 25.0
+offset_top = 22.0
+offset_right = 88.0
+offset_bottom = 64.0
 size_flags_horizontal = 4
 theme_type_variation = &"HeaderLarge"
 text = "HUD"
-
-[node name="PauseInstructions" type="Label" parent="Stack"]
-layout_mode = 2
-text = "Press START, P, or ESC to open pause menu."
-horizontal_alignment = 1
-
-[node name="LinkButton" type="LinkButton" parent="Stack"]
-layout_mode = 2
-size_flags_horizontal = 4
-text = "View Template Source"
-uri = "https://github.com/brettchalupa/godot_skeleton"
 
 [node name="PauseMenu" parent="." instance=ExtResource("3_8ugyv")]
 visible = false
