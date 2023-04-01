@@ -10,11 +10,6 @@ var enabled: bool:
         visible = enabled
         set_process_input(enabled)
 
-        # When disabling the HUD, also stop showing the pause menu.
-        if not enabled:
-            @warning_ignore('unsafe_method_access')
-            $PauseMenu._resume()
-
 
 func disable() -> void:
     enabled = false

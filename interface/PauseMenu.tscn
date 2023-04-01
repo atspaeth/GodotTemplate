@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://ceq215tmlhrhv"]
+[gd_scene load_steps=2 format=3 uid="uid://ceq215tmlhrhv"]
 
 [ext_resource type="Script" path="res://interface/PauseMenu.gd" id="1_tsdl3"]
-[ext_resource type="Script" path="res://interface/PauseMenuOptions.gd" id="2_8vpb7"]
 
 [node name="PauseMenu" type="Control"]
 process_mode = 2
@@ -47,7 +46,6 @@ offset_right = 721.0
 offset_bottom = 714.0
 shortcut_context = NodePath("Resume")
 alignment = 1
-script = ExtResource("2_8vpb7")
 metadata/_edit_group_ = true
 
 [node name="Resume" type="Button" parent="PauseOptions"]
@@ -62,6 +60,6 @@ text = "Return to Main Menu"
 layout_mode = 2
 text = "Quit"
 
-[connection signal="pressed" from="PauseOptions/Resume" to="." method="_resume"]
-[connection signal="pressed" from="PauseOptions/MainMenu" to="PauseOptions" method="_on_main_menu_pressed"]
-[connection signal="pressed" from="PauseOptions/Quit" to="PauseOptions" method="_on_quit_pressed"]
+[connection signal="pressed" from="PauseOptions/Resume" to="." method="resume"]
+[connection signal="pressed" from="PauseOptions/MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="PauseOptions/Quit" to="." method="_on_quit_pressed"]
