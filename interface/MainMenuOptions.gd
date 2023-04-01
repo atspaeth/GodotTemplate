@@ -3,11 +3,14 @@ extends VFlowContainer
 @export var gameplay_scene:PackedScene
 @export var settings_scene:PackedScene
 
+@onready var start_button:Button = $Start
+@onready var quit_button:Button = $Quit
+
 func _ready():
-    get_children()[0].grab_focus()
+    start_button.grab_focus()
 
     if !OS.has_feature("pc"):
-        $Quit.hide()
+        quit_button.hide()
 
 func _on_quit_pressed():
     get_tree().quit()

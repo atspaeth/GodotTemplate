@@ -1,6 +1,8 @@
 extends Control
 
-func _input(event):
+@onready var pause_options:Control = $PauseOptions
+
+func _input(event:InputEvent):
     if event.is_action_released("pause"):
         call_deferred("_resume")
 
@@ -10,4 +12,5 @@ func _resume():
 
 func pause():
     show()
-    $PauseOptions.focus()
+    @warning_ignore('unsafe_method_access')
+    pause_options.focus()
