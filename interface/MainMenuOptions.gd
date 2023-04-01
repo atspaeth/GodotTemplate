@@ -7,6 +7,7 @@ extends VFlowContainer
 @onready var quit_button:Button = $Quit
 
 func _ready() -> void:
+    HUD.enabled = false
     start_button.grab_focus()
 
     if !OS.has_feature("pc"):
@@ -19,4 +20,5 @@ func _on_settings_pressed() -> void:
     get_tree().change_scene_to_packed(settings_scene)
 
 func _on_start_pressed() -> void:
+    HUD.enabled = true
     get_tree().change_scene_to_packed(gameplay_scene)
