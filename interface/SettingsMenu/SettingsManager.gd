@@ -1,6 +1,6 @@
 extends Node
 
-var settings = {
+var settings := {
     fullscreen = false,
     play_sfx = true,
     play_music = true
@@ -10,7 +10,7 @@ const SETTINGS_FILE = "user://settings.cfg"
 const CONFIG_SECTION = "settings"
 
 
-func _ready():
+func _ready() -> void:
     var config = ConfigFile.new()
     var err = config.load(SETTINGS_FILE)
     if err:
@@ -23,7 +23,7 @@ func _ready():
 
 
 ## Persist all settings from the SettingsManager internal state to disk.
-func save_settings():
+func save_settings() -> void:
     var config = ConfigFile.new()
     for setting in settings:
         config.set_value(CONFIG_SECTION, setting, settings[setting])
@@ -33,7 +33,7 @@ func save_settings():
 ## Assign a global setting value in the SettingsManager internal state.
 ## Defaults to saving all settings after one gets set, but can be disabled
 ## with the `save` argument.
-func set_setting(setting:String, val, save:bool=true):
+func set_setting(setting:String, val:Variant, save:bool=true) -> void:
     settings[setting] = val
 
     if setting == "fullscreen":
@@ -55,5 +55,5 @@ func setting_exists(setting:String) -> bool:
 
 
 ## Return the current value of a setting.
-func get_setting(setting):
+func get_setting(setting:String) -> Variant:
     return settings.get(setting)

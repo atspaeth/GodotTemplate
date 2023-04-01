@@ -6,17 +6,17 @@ extends VFlowContainer
 @onready var start_button:Button = $Start
 @onready var quit_button:Button = $Quit
 
-func _ready():
+func _ready() -> void:
     start_button.grab_focus()
 
     if !OS.has_feature("pc"):
         quit_button.hide()
 
-func _on_quit_pressed():
+func _on_quit_pressed() -> void:
     get_tree().quit()
 
-func _on_settings_pressed():
+func _on_settings_pressed() -> void:
     get_tree().change_scene_to_packed(settings_scene)
 
-func _on_start_pressed():
+func _on_start_pressed() -> void:
     get_tree().change_scene_to_packed(gameplay_scene)
