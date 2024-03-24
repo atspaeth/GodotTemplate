@@ -25,7 +25,7 @@ func _ready() -> void:
 ## Persist all settings from the SettingsManager internal state to disk.
 func save_settings() -> void:
     var config = ConfigFile.new()
-    for setting in settings:
+    for setting:String in settings:
         config.set_value(CONFIG_SECTION, setting, settings[setting])
     config.save(SETTINGS_FILE)
 
