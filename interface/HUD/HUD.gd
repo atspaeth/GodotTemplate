@@ -19,7 +19,7 @@ func enable() -> void:
     enabled = true
 
 
-func _input(event:InputEvent) -> void:
+func _input(event: InputEvent) -> void:
     if event.is_action_released("ui_accept"):
         get_tree().change_scene_to_file("res://interface/MainMenu.tscn")
     elif event.is_action_released("pause"):

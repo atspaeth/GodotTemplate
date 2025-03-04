@@ -1,5 +1,5 @@
 extends Node2D
 
 
-func _process(delta: float):
+func _process(delta: float) -> void:
     self.rotate(delta)

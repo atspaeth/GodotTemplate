@@ -1,10 +1,10 @@
 extends VFlowContainer
 
-@export var gameplay_scene:PackedScene
-@export var settings_scene:PackedScene
+@export var gameplay_scene: PackedScene
+@export var settings_scene: PackedScene
 
-@onready var start_button:Button = $Start
-@onready var quit_button:Button = $Quit
+@onready var start_button: Button = $Start
+@onready var quit_button: Button = $Quit
 
 func _ready() -> void:
     HUD.enabled = false

@@ -1,8 +1,8 @@
 extends Control
 
-@onready var pause_options:Control = $PauseOptions
-@onready var quit_button:Button = $PauseOptions/Quit
-@onready var resume_button:Button = $PauseOptions/Resume
+@onready var pause_options: Control = $PauseOptions
+@onready var quit_button: Button = $PauseOptions/Quit
+@onready var resume_button: Button = $PauseOptions/Resume
 
 
 func _ready() -> void:
@@ -11,7 +11,7 @@ func _ready() -> void:
         quit_button.hide()
 
 
-func _input(event:InputEvent) -> void:
+func _input(event: InputEvent) -> void:
     if event.is_action_released("pause"):
         call_deferred("_resume")
 

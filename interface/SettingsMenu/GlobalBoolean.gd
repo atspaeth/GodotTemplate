@@ -9,8 +9,13 @@ func _ready() -> void:
         hide()
         return
 
-    var state: bool = SettingsManager.get_setting(setting_name)
-    set_pressed_no_signal(state)
+    var state: Variant = SettingsManager.get_setting(setting_name)
+    if state is not bool:
+        hide()
+        return
 
-func _on_toggled(to_state:bool) -> void:
+    var initial_set: bool = state
+    set_pressed_no_signal(initial_set)
+
+func _on_toggled(to_state: bool) -> void:
     SettingsManager.set_setting(setting_name, to_state)

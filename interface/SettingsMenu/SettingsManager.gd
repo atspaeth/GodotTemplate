@@ -1,6 +1,6 @@
 extends Node
 
-var settings := {
+var settings: Dictionary[String, Variant] = {
     fullscreen = false,
     play_sfx = true,
     play_music = true
@@ -11,10 +11,10 @@ const CONFIG_SECTION = "settings"
 
 
 func _ready() -> void:
-    var config = ConfigFile.new()
-    var err = config.load(SETTINGS_FILE)
+    var config := ConfigFile.new()
+    var err := config.load(SETTINGS_FILE)
     if err:
-        push_warning("Failed to load %s (error %d)." % [SETTINGS_FILE, err])
+        printerr("Failed to load %s: " % SETTINGS_FILE, error_string(err))
     else:
         for setting in config.get_section_keys(CONFIG_SECTION):
             set_setting(setting, config.get_value(CONFIG_SECTION, setting), false)
@@ -24,8 +24,8 @@ func _ready() -> void:
 
 ## Persist all settings from the SettingsManager internal state to disk.
 func save_settings() -> void:
-    var config = ConfigFile.new()
-    for setting:String in settings:
+    var config := ConfigFile.new()
+    for setting in settings:
         config.set_value(CONFIG_SECTION, setting, settings[setting])
     config.save(SETTINGS_FILE)
 
@@ -33,7 +33,7 @@ func save_settings() -> void:
 ## Assign a global setting value in the SettingsManager internal state.
 ## Defaults to saving all settings after one gets set, but can be disabled
 ## with the `save` argument.
-func set_setting(setting:String, val:Variant, save:bool=true) -> void:
+func set_setting(setting: String, val: Variant, save: bool = true) -> void:
     settings[setting] = val
 
     if setting == "fullscreen":
@@ -47,7 +47,7 @@ func set_setting(setting:String, val:Variant, save:bool=true) -> void:
 
 
 ## Return whether a given setting exists and is valid on this platform.
-func setting_exists(setting:String) -> bool:
+func setting_exists(setting: String) -> bool:
     if setting == 'fullscreen':
         return OS.has_feature('pc')
     else:
@@ -55,5 +55,5 @@ func setting_exists(setting:String) -> bool:
 
 
 ## Return the current value of a setting.
-func get_setting(setting:String) -> Variant:
+func get_setting(setting: String) -> Variant:
     return settings.get(setting)
