@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://vp4wxpixuu0o"]
 
-[ext_resource type="Script" path="res://interface/SettingsMenu/SettingsControls.gd" id="1_1qbwu"]
-[ext_resource type="Script" path="res://interface/SettingsMenu/GlobalBoolean.gd" id="3_wwpfs"]
-[ext_resource type="Script" path="res://interface/SettingsMenu/BackButton.gd" id="5_lcdcj"]
+[ext_resource type="Script" uid="uid://dd2c5xm2yerpx" path="res://interface/SettingsMenu/SettingsControls.gd" id="1_1qbwu"]
+[ext_resource type="Script" uid="uid://xiuvxyl4h1f1" path="res://interface/SettingsMenu/GlobalBoolean.gd" id="3_wwpfs"]
+[ext_resource type="Script" uid="uid://cmgvdkc6b83v2" path="res://interface/SettingsMenu/BackButton.gd" id="5_lcdcj"]
 
 [node name="Settings" type="Control"]
 layout_mode = 3
@@ -50,7 +50,7 @@ horizontal_alignment = 1
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="SettingsControls" type="VFlowContainer" parent="." node_paths=PackedStringArray("shortcut_context")]
+[node name="SettingsControls" type="VFlowContainer" parent="."]
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
@@ -62,7 +62,6 @@ offset_right = 77.0
 offset_bottom = -9.0
 grow_horizontal = 2
 grow_vertical = 2
-shortcut_context = NodePath("")
 alignment = 1
 script = ExtResource("1_1qbwu")
 

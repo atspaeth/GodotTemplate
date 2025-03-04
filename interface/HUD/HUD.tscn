@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://pr5s22jxv83h"]
 
-[ext_resource type="Script" path="res://interface/HUD/HUD.gd" id="1_kxwwx"]
+[ext_resource type="Script" uid="uid://tv60jkinxs8j" path="res://interface/HUD/HUD.gd" id="1_kxwwx"]
 [ext_resource type="PackedScene" uid="uid://ceq215tmlhrhv" path="res://interface/PauseMenu.tscn" id="3_8ugyv"]
 
 [node name="HUD" type="CanvasLayer"]
